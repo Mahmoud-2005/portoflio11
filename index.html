@@ -48,85 +48,92 @@
         }
 
         /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 8%;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            background: rgba(10, 14, 23, 0.7);
-            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-        }
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
-            position: relative;
-        }
+    /* ↓ قلل البادينج لتصغير الهيدر */
+    padding: 12px 8%;
 
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            border-radius: 10px;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(10, 14, 23, 0.7);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
 
-        .logo:hover::after {
-            transform: scaleX(1);
-        }
+    /* أنيميشن ناعمة لو حصل تغييرات */
+    transition: padding 0.3s ease;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
+.logo {
+    font-size: 1.8rem; /* قلل الحجم شوي */
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    position: relative;
+}
 
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            position: relative;
-            padding: 8px 0;
-            transition: var(--transition);
-            opacity: 0.9;
-        }
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition);
+}
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: var(--transition);
-        }
+.logo:hover::after {
+    transform: scaleX(1);
+}
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
 
-        .nav-links a:hover {
-            color: var(--accent);
-            opacity: 1;
-        }
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem; /* صغر الخط شوي */
+    position: relative;
+    padding: 6px 0; /* قلل البادينج الرأسي */
+    transition: var(--transition);
+    opacity: 0.9;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+    opacity: 1;
+}
+
 
         /* Hero Section */
         .hero {
